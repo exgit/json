@@ -27,28 +27,28 @@
 
 // mapping types
 typedef enum {
-	MINT,	// json number => C char, short or int
-	MFLT,	// json number => C float or double
-	MSTR,	// json string => C char[N]
-	MARR,	// json array  => nested mapping
-	MOBJ	// json object => nested mapping
+    MINT,   // json number => C char, short or int
+    MFLT,   // json number => C float or double
+    MSTR,   // json string => C char[N]
+    MARR,   // json array  => nested mapping
+    MOBJ    // json object => nested mapping
 } map_t;
 
 
 // mapping between json array element and C data
 typedef struct {
-	map_t type;		// mapping type
-	size_t size;	// size of object pointed by ptr
-	void *ptr;		// ptr to C data or nested mapping
+    map_t type;     // mapping type
+    size_t size;    // size of object pointed by ptr
+    void *ptr;      // ptr to C data or nested mapping
 } elt;
 
 
 // mapping between json object attribute and C data
 typedef struct {
-	const char *name;	// attribute name
-	map_t type;			// mapping type
-	size_t size;		// size of object pointed by ptr
-	void *ptr;			// ptr to C data or nested mapping
+    const char *name;   // attribute name
+    map_t type;         // mapping type
+    size_t size;        // size of object pointed by ptr
+    void *ptr;          // ptr to C data or nested mapping
 } atr;
 
 
