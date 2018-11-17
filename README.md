@@ -70,3 +70,23 @@ printf("%d\n", n);
 printf("%g\n", f);
 printf("%s\n", buf);
 ```
+
+#### Read json object
+
+```C
+int n = 0;
+double f = 0.0;
+char buf[256];
+atr arr[] = {
+    {"first", MINT, sizeof(n), &n},
+    {"second", MFLT, sizeof(f), &f},
+    {"third", MSTR, sizeof(buf), &buf}
+};
+elt map = {MOBJ, 3, &arr};
+const char *j = "{first:22, second:2.22, third:'json object example'}";
+res = json_read(&map, j, strlen(j));
+if (res) return 1;
+printf("%d\n", n);
+printf("%g\n", f);
+printf("%s\n", buf);
+```
