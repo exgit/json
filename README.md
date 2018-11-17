@@ -1,4 +1,4 @@
-Here is a C language library for json data format.
+Here is a C language library for reading and writing data in json format.
 
 It is designed for maximum json decoding speed. This goal is achieved by not doing memory allocations
 during parsing process. Values encountered while parsing are immediately stored into C variables
